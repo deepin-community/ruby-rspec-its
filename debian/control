@@ -1,0 +1,31 @@
+Source: ruby-rspec-its
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Cédric Boutillier <boutil@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               gem2deb,
+               rake,
+               ruby-rspec (>= 3~)
+Standards-Version: 4.4.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-rspec-its.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-rspec-its
+Homepage: https://github.com/rspec/rspec-its
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-rspec-its
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-rspec-core (>= 3~),
+         ruby-rspec-expectations (>= 3~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: attribute matching extension for the RSpec BDD framework
+ RSpec is a behaviour driven development framework for Ruby,
+ provided by the ruby-rspec package.
+ .
+ The "its" method, formerly part of rspec-core before version 3, provides a
+ short-hand to specify the expected value of an attribute.
+ It is now distributed independently, and available in this package.
